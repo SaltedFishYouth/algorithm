@@ -1,35 +1,19 @@
 package cn.lsx.algorithm.datastructure;
 
 /**
+ * 队列
  * @author linShengxi
- * @date 2021/5/24
+ * @date 2021/5/27
  */
 
-public class Queue {
-    Object[] arr;
-    private int front;//第一条数据下标
-    private int rear;//最后一条数据的下一个位置
+public interface Queue {
+    public void enQueue(Object o);
 
-    public Queue(){
-        this(10); //调用其它构造方法
-    }
-    public Queue(int size){
-        arr = new Object[size];
-        front = 0;
-        rear = 0;
-    }
+    public Object deQueue();
 
-    public void enQueue(Object o){
+    public void showAll();
 
-    }
+    public void showFront();
 
-
-    private boolean isEmpty(){
-        return front == rear;
-    }
-
-    private boolean isFull(){
-        return true;
-    }
-
+    public void showQueue();
 }
