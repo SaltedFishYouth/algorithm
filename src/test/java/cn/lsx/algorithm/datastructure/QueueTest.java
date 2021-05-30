@@ -1,5 +1,9 @@
 package cn.lsx.algorithm.datastructure;
 
+import cn.lsx.algorithm.datastructure.queue.ArrayQueue;
+import cn.lsx.algorithm.datastructure.queue.CircleArrayQueue;
+import cn.lsx.algorithm.datastructure.queue.Queue;
+
 import java.util.Scanner;
 
 /**

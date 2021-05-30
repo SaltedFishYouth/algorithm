@@ -1,4 +1,4 @@
-package cn.lsx.algorithm.datastructure;
+package cn.lsx.algorithm.datastructure.queue;
 
 /**
  * 队列
