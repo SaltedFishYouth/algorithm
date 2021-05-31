@@ -1,11 +1,11 @@
-package cn.lsx.algorithm.datastructure;
+package cn.lsx.algorithm.datastructure.linkedlist;
 
 /**
  * 单链表
  *
  * @author 25527
  */
-public class SingleLinkedList<T> {
+public class SingleLinkedList<T> implements LinkedList<T> {
     private int size;
     /**
      * 头结点不可变动
@@ -15,6 +15,7 @@ public class SingleLinkedList<T> {
     /**
      * 插入
      */
+    @Override
     public void add(T data) {
         if (head == null) {
             head = new Node<>(data);
@@ -22,7 +23,7 @@ public class SingleLinkedList<T> {
             return;
         }
         Node node = head;
-        while (node.getNextNode()!=null){
+        while (node.getNextNode() != null) {
             node = node.getNextNode();
         }
         node.setNextNode(new Node<>(data));
@@ -32,6 +33,7 @@ public class SingleLinkedList<T> {
     /**
      * 获取
      */
+    @Override
     public T get(int targetIndex) {
         if (size <= targetIndex) {
             throw new RuntimeException("目标位置 超出链表长度");
@@ -53,6 +55,7 @@ public class SingleLinkedList<T> {
     /**
      * 删除某对象节点
      */
+    @Override
     public void remove(T data) {
         Node<T> node = head;
         if (node == null) {
@@ -71,6 +74,7 @@ public class SingleLinkedList<T> {
     /**
      * 删除某对象节点
      */
+    @Override
     public void remove(int target) {
         Node<T> node = head;
         if (target >= size) {
@@ -80,7 +84,7 @@ public class SingleLinkedList<T> {
         while (index + 1 < target && node != null) {
             node = node.getNextNode();
         }
-        if (target == 0){
+        if (target == 0) {
             head = head.getNextNode();
             size--;
         } else if (index + 1 == target && node != null && node.getNextNode() != null) {
@@ -92,6 +96,7 @@ public class SingleLinkedList<T> {
     /**
      * 获取长度
      */
+    @Override
     public int getSize() {
         return size;
     }
@@ -99,6 +104,7 @@ public class SingleLinkedList<T> {
     /**
      * 翻转
      */
+    @Override
     public void reverse() {
         Node<T> node = head;
         Node<T> newHead = null;
@@ -111,33 +117,33 @@ public class SingleLinkedList<T> {
         head = newHead;
     }
 
+}
 
-    /**
-     * 单链表节点
-     */
-    class Node<T> {
-        T data;
+/**
+ * 单链表节点
+ */
+class Node<T> {
+    T data;
 
-        public Node(T data) {
-            this.data = data;
-        }
+    public Node(T data) {
+        this.data = data;
+    }
 
-        private Node<T> nextNode;
+    private Node<T> nextNode;
 
-        public T getData() {
-            return data;
-        }
+    public T getData() {
+        return data;
+    }
 
-        public void setData(T data) {
-            this.data = data;
-        }
+    public void setData(T data) {
+        this.data = data;
+    }
 
-        public Node<T> getNextNode() {
-            return nextNode;
-        }
+    public Node<T> getNextNode() {
+        return nextNode;
+    }
 
-        public void setNextNode(Node<T> nextNode) {
-            this.nextNode = nextNode;
-        }
+    public void setNextNode(Node<T> nextNode) {
+        this.nextNode = nextNode;
     }
 }

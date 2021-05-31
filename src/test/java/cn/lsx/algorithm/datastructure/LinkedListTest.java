@@ -1,12 +1,28 @@
 package cn.lsx.algorithm.datastructure;
 
+import cn.lsx.algorithm.datastructure.linkedlist.DoubleLinkedList;
+import cn.lsx.algorithm.datastructure.linkedlist.LinkedList;
+import cn.lsx.algorithm.datastructure.linkedlist.SingleLinkedList;
+
 import java.util.Scanner;
 
-public class SingleLinkedListTest {
+public class LinkedListTest {
     public static void main(String[] args) {
-        SingleLinkedList<String> list = new SingleLinkedList();
         Scanner scan = new Scanner(System.in);
-        int index = 0;
+        System.out.println("请选择队列类型 1:单链表 2:双链表 0:退出");
+        int index = scan.nextInt();
+
+        LinkedList<String> list = null;
+        switch (index) {
+            case 0:
+                return;
+            case 1:
+                list = new SingleLinkedList();
+                break;
+            case 2:
+                list = new DoubleLinkedList();
+                break;
+        }
         while (true) {
             System.out.println("1:插入 2:取出 3:根据坐标删除 4:根据坐标删除 5:翻转 6:展示全部 0:退出");
 
