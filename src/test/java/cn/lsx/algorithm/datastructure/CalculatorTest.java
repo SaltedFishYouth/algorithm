@@ -12,6 +12,6 @@ public class CalculatorTest {
     @Test
     public void calculator(){
         Calculator calculator = new Calculator();
-        calculator.run("5*2+2*(1+1)/(5-3)+2");
+        calculator.run("50*2+2*(1+1)/(5-3)+3");
     }
 }

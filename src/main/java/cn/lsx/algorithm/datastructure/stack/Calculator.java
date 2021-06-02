@@ -18,11 +18,17 @@ public class Calculator {
         List<String> list = Arrays.asList(formula.split(""));
         int val = 0;
 
+        String cacheNum = "";
         for (int i = 0; i < list.size(); i++) {
             String s = list.get(i);
-            //如果是数字直接入数字栈
+
+            //如果是数字直接入数字栈 拼接数字字符串
             if (isNum(s)) {
-                numStack.push(Integer.parseInt(s));
+                cacheNum = cacheNum + s;
+                if (i + 1 == list.size() || !isNum(list.get(i + 1))) {
+                    numStack.push(Integer.parseInt(cacheNum));
+                    cacheNum = "";
+                }
                 continue;
             }
 
@@ -89,10 +95,10 @@ public class Calculator {
     }
 
     private int getLevel(String str) {
-        if ( CalculatorContext.LEFT_BRACKET.equals(str)){
+        if (CalculatorContext.LEFT_BRACKET.equals(str)) {
             return 0;
         }
-        if (CalculatorContext.PLUS.equals(str) || CalculatorContext.MINUS.equals(str) ) {
+        if (CalculatorContext.PLUS.equals(str) || CalculatorContext.MINUS.equals(str)) {
             return 1;
         }
         if (CalculatorContext.PRODUCT.equals(str) || CalculatorContext.DIVISION.equals(str)) {
