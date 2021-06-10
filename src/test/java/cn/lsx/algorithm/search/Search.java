@@ -32,4 +32,24 @@ public class Search {
         List list = search.search(arr, 5);
         show(list);
     }
+
+    @Test
+    public void interpolationSearch() {
+        int[] arr = build();
+
+        InterpolationSearch search = new InterpolationSearch();
+
+        List list = search.search(arr, 5);
+        show(list);
+    }
+
+    @Test
+    public void fibonacciSearch() {
+        int[] arr = build();
+
+        FibonacciSearch search = new FibonacciSearch();
+
+        List list = search.search(arr, 5);
+        show(list);
+    }
 }

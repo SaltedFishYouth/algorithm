@@ -23,11 +23,14 @@ public class BinarySearch {
                 right = mid-1;
             } else {
                 targetIndexs.add(mid);
-                while (arr[--mid] == target) {
-                    targetIndexs.add(mid);
+                right = mid;
+                left = mid;
+
+                while (arr[--left] == target) {
+                    targetIndexs.add(left);
                 }
-                while (arr[++mid] == target) {
-                    targetIndexs.add(mid);
+                while (arr[++right] == target) {
+                    targetIndexs.add(right);
                 }
                 break;
             }
