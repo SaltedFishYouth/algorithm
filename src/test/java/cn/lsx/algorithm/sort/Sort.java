@@ -104,4 +104,17 @@ public class Sort {
         System.out.println("数组基数排序后");
         show(arr);
     }
+
+    @Test
+    public void heapSort(){
+        //int[] arr = build(10, 20);
+        int[] arr = new int[]{1,3,4,5,2,6,9,7,8,0};
+
+        System.out.println("数组堆排序前");
+        show(arr);
+        HeapSort sort = new HeapSort();
+        sort.sort(arr);
+        System.out.println("数组堆排序后");
+        show(arr);
+    }
 }
